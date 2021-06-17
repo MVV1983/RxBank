@@ -1,4 +1,4 @@
-package com.example.rxbank
+package com.example.rxbank.com.example.rxbank
 
 object Constants {
     const val API_URL = "http://103.23.208.205:8082/"
