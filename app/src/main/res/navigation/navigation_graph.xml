@@ -31,12 +31,6 @@
                 app:popEnterAnim="@anim/slide_in_left"
                 app:popExitAnim="@anim/slide_out_right"
                 app:destination="@id/loginFragment"/>
-        <action android:id="@+id/action_registrationFragment_to_congratulationFragment"
-                app:destination="@id/congratulationFragment"/>
-    </fragment>
-    <fragment android:id="@+id/congratulationFragment" android:name="com.example.rxbank.view.CongratulationFragment"
-              android:label="fragment_congratulation" tools:layout="@layout/fragment_congratulation">
-        <action android:id="@+id/action_congratulationFragment_to_loginFragment" app:destination="@id/loginFragment"/>
     </fragment>
     <fragment android:id="@+id/homeFragment" android:name="com.example.rxbank.view.HomeFragment"
               android:label="fragment_home" tools:layout="@layout/fragment_home"/>
