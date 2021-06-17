@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
+import androidx.navigation.Navigation
 
 import com.example.rxbank.R
 import com.example.rxbank.api.RetrofitService
@@ -84,6 +85,7 @@ class RegistrationFragment : Fragment() {
 
     private fun onResponse(response: LoginResponse){
         Toast.makeText(context, response.name+ response.role, Toast.LENGTH_LONG).show()
+        Navigation.createNavigateOnClickListener(R.id.action_registrationFragment_to_congratulationFragment)
     }
 
     private fun onFailure(t: Throwable) {
