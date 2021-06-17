@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation_graph"
+            app:startDestination="@id/loginFragment">
+
+    <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.example.rxbank.view.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login">
+        <action
+                android:id="@+id/action_loginFragment_to_registrationFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:destination="@id/registrationFragment"/>
+        <action android:id="@+id/action_loginFragment_to_homeFragment" app:destination="@id/homeFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/registrationFragment"
+            android:name="com.example.rxbank.view.RegistrationFragment"
+            android:label="fragment_registration"
+            tools:layout="@layout/fragment_registration">
+        <action
+                android:id="@+id/action_registrationFragment_to_loginFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:destination="@id/loginFragment"/>
+        <action android:id="@+id/action_registrationFragment_to_congratulationFragment"
+                app:destination="@id/congratulationFragment"/>
+    </fragment>
+    <fragment android:id="@+id/congratulationFragment" android:name="com.example.rxbank.view.CongratulationFragment"
+              android:label="fragment_congratulation" tools:layout="@layout/fragment_congratulation">
+        <action android:id="@+id/action_congratulationFragment_to_loginFragment" app:destination="@id/loginFragment"/>
+    </fragment>
+    <fragment android:id="@+id/homeFragment" android:name="com.example.rxbank.view.HomeFragment"
+              android:label="fragment_home" tools:layout="@layout/fragment_home"/>
+</navigation>
