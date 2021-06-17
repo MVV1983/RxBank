@@ -1,7 +1,7 @@
 package com.example.rxbank.api
 
 import com.example.rxbank.data.requests.LoginRequest
-import com.example.rxbank.data.requests.NewLoanData
+import com.example.rxbank.data.requests.NewLoanRequest
 import com.example.rxbank.data.response.LoanData
 import com.example.rxbank.data.response.LoginResponse
 import io.reactivex.Single
@@ -17,5 +17,5 @@ interface InterfaceAPI {
     fun postLogin(@Body data: LoginRequest): Single<String>
 
     @POST("loans")
-    fun postLoans(@Header("Authorization") auth: String, @Body data: NewLoanData): Single<LoanData>
+    fun postLoans(@Header("Authorization") auth: String, @Body data: NewLoanRequest): Single<LoanData>
 }

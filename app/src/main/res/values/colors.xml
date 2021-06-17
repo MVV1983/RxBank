@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="active">#CC1C1C</color>
+    <color name="light_button">#1948DC</color>
+    <color name="light_text">#A7AEC4</color>
+
 </resources>

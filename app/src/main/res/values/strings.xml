@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">OWL FINANCE</string>
-    <string name="welcome">Добро пожаловать</string>
+    <string name="app_name">Owl Credit Bank</string>
+    <string name="welcome">Добро пожаловать  в Owl Credit Bank </string>
     <string name="exit_button">Выход</string>
     <string name="login_button">Войти</string>
     <string name="registration_button">Зарегистрироваться</string>
@@ -8,12 +8,16 @@
     <string name="login">Логин</string>
     <string name="login_password">Пароль</string>
     <string name="registration_text">Для регистрации в приложении введите логин и пароль</string>
-    <string name="registration_info">Я новый пользователь. Зарегистрироваться</string>
+    <string name="registration_info">Я новый пользователь! Зарегистрироваться</string>
     <string name="congratulations_info">Поздравляем! Ваш аккаунт создан!</string>
     <string name="exit_congratulation">Выйти в меню логина</string>
     <string name="approved_loans">Одобренные кредиты</string>
     <string name="registered_loans">Имеющиеся кредиты</string>
     <string name="rejected_loans">Отклоненные кредиты</string>
+    <string name="listing_loans">Список кредитов</string>
+    <string name="back_button">Выйти</string>
+    <string name="request_credit">Запрос кредита</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="MainActivity">Hello blank fragment</string>

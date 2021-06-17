@@ -1,13 +1,15 @@
 package com.example.rxbank.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.rxbank.R
 import com.example.rxbank.api.RetrofitService
 import com.example.rxbank.data.requests.LoginRequest
@@ -15,12 +17,13 @@ import com.example.rxbank.data.response.LoginResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_login.registrationButton
 import kotlinx.android.synthetic.main.fragment_registration.*
+
 
 class RegistrationFragment : Fragment() {
 
     var disposable: Disposable? = null
+    val bundle = Bundle()
 
     private var isCorrectNameInput: Boolean = false
     private var isCorrectPasswordInput: Boolean = false
@@ -29,19 +32,20 @@ class RegistrationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_registration, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        registrationButton?.setOnClickListener {
-            val user = LoginRequest("mirror", "12345")
-            //val user = LoginRequest(registrationName.text.toString(), registrationPass.text.toString())
+        registrationBtn?.setOnClickListener {
+            val user = LoginRequest(
+                registrationName.text.toString(),
+                registrationPass.text.toString()
+            )
             postRegistration(user)
         }
-
         registrationName?.doOnTextChanged { text, _, _, _ ->
             if (text?.length!! < 1) {
                 registrationUser?.error = "Введите данные"
@@ -64,6 +68,7 @@ class RegistrationFragment : Fragment() {
 
             allowRegistration()
         }
+
     }
 
 
@@ -82,7 +87,9 @@ class RegistrationFragment : Fragment() {
     }
 
     private fun onResponse(response: LoginResponse) {
+        bundle.putString("USER",response.name)
         Toast.makeText(context, response.name + response.role, Toast.LENGTH_LONG).show()
+        view?.findNavController()?.navigate(R.id.action_registrationFragment_to_congratulationFragment,bundle)
     }
 
     private fun onFailure(t: Throwable) {
@@ -90,7 +97,7 @@ class RegistrationFragment : Fragment() {
     }
 
     private fun allowRegistration() {
-        registrationButton?.isEnabled = isCorrectNameInput && isCorrectPasswordInput
+        registrationBtn?.isEnabled = isCorrectNameInput && isCorrectPasswordInput
     }
 
     override fun onDestroy() {

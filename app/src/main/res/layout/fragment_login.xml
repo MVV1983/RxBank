@@ -1,77 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginFragment">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.LoginFragment">
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:background="@drawable/rectangle_rounded"
-            tools:layout_editor_absoluteY="38dp"
-            tools:layout_editor_absoluteX="16dp">
+        android:background="@drawable/rectangle_rounded"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="38dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_owl_icon" />
+
         <TextView
-                android:text="@string/welcome"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="26sp"
-                android:textStyle="bold|italic"
-                android:id="@+id/textView2"/>
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:textColor="#A7AEC4"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
         <TextView
-                android:text="@string/login_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:gravity="center"
-                android:id="@+id/textView"/>
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/login_text"
+            android:textColor="#A7AEC4" />
+
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:textColor="#A7AEC4"
-                android:layout_marginTop="32dp"
-                android:ems="10"
-                android:id="@+id/textLogin"
-                android:hint="@string/login"
-                android:textColorHint="#A7AEC4"
-                app:backgroundTint="#A7AEC4"/>
+            android:id="@+id/textLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="@string/login"
+            android:inputType="textPersonName"
+            android:textColor="#A7AEC4"
+            android:textColorHint="#A7AEC4"
+            app:backgroundTint="#A7AEC4" />
+
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="@string/login_password"
-                android:textColorHint="#A7AEC4"
-                android:ems="10"
-                android:textColor="#A7AEC4"
-                android:id="@+id/textPass"
-                app:backgroundTint="#A7AEC4"/>
+            android:id="@+id/textPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/login_password"
+            android:inputType="textPersonName"
+            android:textColor="#A7AEC4"
+            android:textColorHint="#A7AEC4"
+            app:backgroundTint="#A7AEC4" />
+
         <Button
-                android:text="@string/login_button"
-                android:enabled="false"
-                android:background="@drawable/button_rounded"
-                android:layout_marginTop="20sp"
-                android:layout_width="123dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_sign_in"/>
+            android:id="@+id/button_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70sp"
+            android:layout_marginRight="70sp"
+            android:layout_marginTop="20sp"
+            android:textColor="@color/light_button"
+            android:background="@drawable/button_rounded"
+            android:enabled="false"
+            android:text="@string/login_button" />
+
         <TextView
-                android:text="@string/registration_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/registrationButton"
-                android:textColor="#A7AEC4"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginTop="150sp"
-        />
+            android:id="@+id/registrationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="150sp"
+            android:text="@string/registration_info"
+            android:textSize="18sp"
+            android:textColor="#A7AEC4" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

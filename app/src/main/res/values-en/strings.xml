@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">OWL FINANCE</string>
-    <string name="welcome">Welcome</string>
+    <string name="app_name">Owl Credit Bank</string>
+    <string name="welcome">Welcome to \n Owl Credit Bank</string>
     <string name="exit_button">Exit</string>
     <string name="login_button">Sign In</string>
     <string name="registration_button">Sign Up</string>
@@ -14,6 +14,10 @@
     <string name="approved_loans">Approved loans</string>
     <string name="registered_loans">My loans</string>
     <string name="rejected_loans">Rejected loans</string>
+    <string name="listing_loans">Listing loans</string>
+    <string name="back_button">Exit</string>
+    <string name="request_credit">Add credit</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="MainActivity">Hello blank fragment</string>
