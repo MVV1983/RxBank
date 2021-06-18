@@ -76,7 +76,7 @@ class RegistrationFragment : Fragment() {
     private fun postRegistration(user: LoginRequest) {
 
         val clientR = RetrofitService.create()
-        Log.v("test", "$user")
+
         disposable = clientR.postRequest(user)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

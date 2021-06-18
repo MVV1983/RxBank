@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/amount_credit"
         android:textSize="20sp"
+        android:textColor="@color/light_text"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,8 +26,9 @@
         android:layout_height="wrap_content"
         android:text="@string/first_name_text"
         android:textSize="20sp"
+        android:textColor="@color/light_text"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAmount" />
 
@@ -36,8 +38,9 @@
         android:layout_height="wrap_content"
         android:text="@string/last_name_text"
         android:textSize="20sp"
+        android:textColor="@color/light_text"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPercent" />
 
@@ -47,8 +50,9 @@
         android:layout_height="wrap_content"
         android:text="@string/percent_credit"
         android:textSize="20sp"
+        android:textColor="@color/light_text"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPeriod" />
 
@@ -58,8 +62,9 @@
         android:layout_height="wrap_content"
         android:text="@string/period_credit"
         android:textSize="20sp"
+        android:textColor="@color/light_text"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPhoneNumber" />
 
@@ -69,10 +74,67 @@
         android:layout_height="wrap_content"
         android:text="@string/phone_number_text"
         android:textSize="20sp"
+        android:textColor="@color/light_text"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textFirstName" />
+
+    <EditText
+        android:id="@+id/enter_Amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="40dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enter_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_Amount" />
+
+    <EditText
+        android:id="@+id/enterphone_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_Name" />
+
+    <EditText
+        android:id="@+id/enter_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterphone_num" />
+
+    <EditText
+        android:id="@+id/enter_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_period" />
+
+    <EditText
+        android:id="@+id/enter_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_percent" />
 
     <Button
         android:id="@+id/getCreditButton"
@@ -84,5 +146,6 @@
         android:textColor="@color/light_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_lastname" />
 </androidx.constraintlayout.widget.ConstraintLayout>

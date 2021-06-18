@@ -80,7 +80,7 @@ class LoginFragment : Fragment() {
     private fun sigIn(user: LoginRequest) {
 
         val clientR = RetrofitService.create()
-        Log.v("test", "$user")
+
         disposable = clientR.postLogin(user)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
