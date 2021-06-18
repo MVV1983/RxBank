@@ -31,6 +31,7 @@
     <string name="period_credit">Период кредита: </string>
     <string name="percent_credit">Процентная ставка: </string>
     <string name="amount_credit">Сумма: </string>
+    <string name="final_message">Поздравляем с оформленным кредитом!!! </string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

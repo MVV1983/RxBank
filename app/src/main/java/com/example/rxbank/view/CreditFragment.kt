@@ -22,6 +22,7 @@ class CreditFragment : Fragment() {
     private lateinit var authorizationToken: AuthorizationToken
 
     var disposable: Disposable? = null
+    val bundle = Bundle()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,10 +43,11 @@ class CreditFragment : Fragment() {
         }
     }
 
-    private fun getNewLoan(key:String) {
+    private fun getNewLoan(key: String) {
         val clientR = RetrofitService.create()
 
-        disposable = clientR.postLoans(key,
+        disposable = clientR.postLoans(
+            key,
             NewLoanRequest(
                 enter_Amount?.text.toString().toInt(),
                 enter_Name?.text.toString(),
@@ -58,15 +60,17 @@ class CreditFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+
                 view?.findNavController()?.navigate(R.id.action_creditFragment_to_finalFragment)
 
-            }, {
-                Toast.makeText(
-                    context,
-                    "Ошибка оформления займа",
-                    Toast.LENGTH_LONG
-                ).show()
+            }, { t ->
+                onFailure(t)
             })
+    }
+
+    private fun onFailure(t: Throwable) {
+        Toast.makeText(context, "Произошла ошибка при вводе данных на кредит", Toast.LENGTH_SHORT)
+            .show()
     }
 
     override fun onDestroy() {

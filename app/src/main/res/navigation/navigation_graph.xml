@@ -80,5 +80,9 @@
         android:id="@+id/finalFragment"
         android:name="com.example.rxbank.view.FinalFragment"
         android:label="fragment_final"
-        tools:layout="@layout/fragment_final" />
+        tools:layout="@layout/fragment_final" >
+        <action
+            android:id="@+id/action_finalFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
