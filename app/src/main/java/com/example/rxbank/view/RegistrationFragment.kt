@@ -31,7 +31,6 @@ class RegistrationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_registration, container, false)
     }
 
@@ -45,6 +44,7 @@ class RegistrationFragment : Fragment() {
             )
             postRegistration(user)
         }
+
         registrationName?.doOnTextChanged { text, _, _, _ ->
             if (text?.length!! < 1) {
                 registrationUser?.error = "Введите данные"
@@ -56,6 +56,7 @@ class RegistrationFragment : Fragment() {
 
             allowRegistration()
         }
+
         registrationPass?.doOnTextChanged { text, _, _, _ ->
             if (registrationPass!!.text.isEmpty()) {
                 registrationPass?.error = "Введите данные"
@@ -86,9 +87,12 @@ class RegistrationFragment : Fragment() {
     }
 
     private fun onResponse(response: LoginResponse) {
-        bundle.putString("USER",response.name)
+        bundle.putString("USER", response.name)
+
         Toast.makeText(context, response.name + response.role, Toast.LENGTH_LONG).show()
-        view?.findNavController()?.navigate(R.id.action_registrationFragment_to_congratulationFragment,bundle)
+
+        view?.findNavController()
+            ?.navigate(R.id.action_registrationFragment_to_congratulationFragment, bundle)
     }
 
     private fun onFailure(t: Throwable) {

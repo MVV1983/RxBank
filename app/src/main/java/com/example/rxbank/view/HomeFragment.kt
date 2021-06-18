@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.rxbank.R
 import com.example.rxbank.repository.AuthorizationToken
 import io.reactivex.disposables.Disposable
@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
 
     private lateinit var authorizationToken: AuthorizationToken
-
 
     var disposable: Disposable? = null
 
@@ -31,18 +30,18 @@ class HomeFragment : Fragment() {
 
         authorizationToken = AuthorizationToken(requireContext())
 
-        //if (authorizationToken.getAuthorizationToken() == "") {
-        //   Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_loginFragment)
-        //}
+        if (authorizationToken.getAuthorizationToken() == "") {
+            view.findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+        }
 
-        backBtn.setOnClickListener(
+        backBtn.setOnClickListener {
+            authorizationToken.saveAuthorizationToken("")
+            view.findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+        }
 
-            Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_loginFragment)
-        )
-
-        addLoan.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_loanInfoFragment)
-        )
+        addLoan.setOnClickListener {
+            view.findNavController().navigate(R.id.action_homeFragment_to_loanInfoFragment)
+        }
     }
 
     override fun onDestroy() {

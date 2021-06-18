@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.rxbank.R
 import com.example.rxbank.api.RetrofitService
@@ -40,9 +39,9 @@ class LoginFragment : Fragment() {
 
         authorizationToken = AuthorizationToken(requireContext())
 
-        registrationButton?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_registrationFragment)
-        )
+        registrationButton?.setOnClickListener {
+            view.findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+        }
 
         button_sign_in?.setOnClickListener {
             val user = LoginRequest(
@@ -63,6 +62,7 @@ class LoginFragment : Fragment() {
 
             allowRegistration()
         }
+
         textPass?.doOnTextChanged { text, _, _, _ ->
             if (textPass!!.text.isEmpty()) {
                 textPass?.error = "Введите пароль"

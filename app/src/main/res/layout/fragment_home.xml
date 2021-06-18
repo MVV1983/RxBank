@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteX="10dp"
         tools:ignore="MissingConstraints">
 
-        <Button
+        <TextView
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

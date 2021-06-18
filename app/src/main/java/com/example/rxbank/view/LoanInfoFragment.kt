@@ -1,7 +1,6 @@
 package com.example.rxbank.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,11 +32,13 @@ class LoanInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         authorizationToken = AuthorizationToken(requireContext())
+
         val key = authorizationToken.getAuthorizationToken().toString()
-        //val user = NewLoanRequest(1000, "figaro", "siro", 6.4, 4, "12345")
+
+        getLoanCondition(key)
 
         submitToReview?.setOnClickListener {
-            getLoanCondition(key)
+
         }
     }
 
@@ -49,7 +50,6 @@ class LoanInfoFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                Log.v("test loan cond",it.maxAmount.toString())
                 maxAmount.text = it.maxAmount.toString()
                 loanPercent.text = it.percent.toString()
                 loanPeriod.text = it.period.toString()
