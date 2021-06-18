@@ -51,6 +51,7 @@ class LoginFragment : Fragment() {
             )
             sigIn(user)
         }
+
         textLogin?.doOnTextChanged { text, _, _, _ ->
             if (text?.length!! < 1) {
                 textLogin?.error = "Введите логин"

@@ -31,16 +31,21 @@ class HomeFragment : Fragment() {
 
         authorizationToken = AuthorizationToken(requireContext())
 
-        backBtn?.setOnClickListener(
+        //if (authorizationToken.getAuthorizationToken() == "") {
+        //   Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_loginFragment)
+        //}
+
+        backBtn.setOnClickListener(
+
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_loginFragment)
         )
-        addLoan?.setOnClickListener(
+
+        addLoan.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_loanInfoFragment)
         )
     }
 
     override fun onDestroy() {
-        authorizationToken.saveAuthorizationToken("")
         disposable?.dispose()
         disposable = null
         super.onDestroy()
