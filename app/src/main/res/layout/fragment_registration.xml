@@ -27,7 +27,7 @@
             android:gravity="center"
             android:layout_marginHorizontal="20dp"
             android:text="@string/app_name"
-            android:textColor="#A7AEC4"
+            android:textColor="@color/light_text"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -40,7 +40,8 @@
             android:gravity="center"
             android:text="@string/registration_text"
             android:textSize="20sp"
-            android:textColor="#A7AEC4" />
+            android:textStyle="bold"
+            android:textColor="@color/light_text"/>
 
         <EditText
             android:id="@+id/registrationName"
@@ -50,7 +51,7 @@
             android:ems="10"
             android:hint="@string/login"
             android:inputType="textPersonName"
-            android:textColor="#A7AEC4"
+            android:textColor="@color/light_text"
             android:textColorHint="#A7AEC4"
             app:backgroundTint="#A7AEC4" />
 
@@ -60,15 +61,18 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/login_password"
+            android:textStyle="bold"
             android:inputType="textPersonName"
-            android:textColor="#A7AEC4"
+            android:textColor="@color/light_text"
             android:textColorHint="#A7AEC4"
             app:backgroundTint="#A7AEC4" />
 
         <Button
             android:id="@+id/registrationBtn"
-            android:layout_width="204dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="70sp"
+            android:layout_marginRight="70sp"
             android:layout_marginTop="20sp"
             android:background="@drawable/button_rounded"
             android:textColor="@color/light_button"

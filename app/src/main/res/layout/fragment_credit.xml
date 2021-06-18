@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textFirstName" />
 
     <EditText
-        android:id="@+id/enter_Amount"
+        android:id="@+id/inputAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -91,61 +91,63 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/enter_Name"
+        android:id="@+id/inputName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enter_Amount" />
+        app:layout_constraintTop_toBottomOf="@+id/inputAmount" />
 
     <EditText
-        android:id="@+id/enterphone_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enter_Name" />
-
-    <EditText
-        android:id="@+id/enter_period"
+        android:id="@+id/inputPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterphone_num" />
+        app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
     <EditText
-        android:id="@+id/enter_percent"
+        android:id="@+id/inputPeriod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enter_period" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPhone" />
 
     <EditText
-        android:id="@+id/enter_lastname"
+        android:id="@+id/inputPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enter_percent" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPeriod" />
+
+    <EditText
+        android:id="@+id/inputLastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPercent" />
 
     <Button
         android:id="@+id/getCreditButton"
-        android:layout_width="177dp"
-        android:layout_height="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70sp"
+        android:layout_marginRight="70sp"
         android:layout_marginBottom="150dp"
         android:background="@drawable/button_rounded"
         android:text="@string/send_data"
         android:textColor="@color/light_button"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enter_lastname" />
+        app:layout_constraintTop_toBottomOf="@+id/inputLastname" />
 </androidx.constraintlayout.widget.ConstraintLayout>

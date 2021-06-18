@@ -1,12 +1,12 @@
 package com.example.rxbank.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.navigation.findNavController
 import com.example.rxbank.R
 import com.example.rxbank.api.RetrofitService
@@ -23,6 +23,10 @@ class CreditFragment : Fragment() {
 
     var disposable: Disposable? = null
     val bundle = Bundle()
+
+
+    private var isCorrectFirsNameInput: Boolean = false
+    private var isCorrectPhoneInput: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +45,31 @@ class CreditFragment : Fragment() {
         getCreditButton?.setOnClickListener {
             getNewLoan(key)
         }
+
+
+        inputName?.doOnTextChanged { text, _, _, _ ->
+            if (text?.length!! < 1) {
+                inputName?.error = "Введите фамилию"
+
+                isCorrectFirsNameInput = false
+            } else {
+                isCorrectFirsNameInput = true
+            }
+
+            allowDispatch()
+        }
+
+        inputPhone?.doOnTextChanged { text, _, _, _ ->
+            if (text?.length!! < 7) {
+                inputPhone?.error = "Мин 7 цифр"
+
+                isCorrectPhoneInput = false
+            } else {
+                isCorrectPhoneInput = true
+            }
+
+            allowDispatch()
+        }
     }
 
     private fun getNewLoan(key: String) {
@@ -49,19 +78,22 @@ class CreditFragment : Fragment() {
         disposable = clientR.postLoans(
             key,
             NewLoanRequest(
-                enter_Amount?.text.toString().toInt(),
-                enter_Name?.text.toString(),
-                enter_lastname?.text.toString(),
-                enter_percent?.text.toString().toDouble(),
-                enter_period?.text.toString().toInt(),
-                enterphone_num?.text.toString()
+                inputAmount?.text.toString().toInt(),
+                inputName?.text.toString(),
+                inputLastname?.text.toString(),
+                inputPercent?.text.toString().toDouble(),
+                inputPeriod?.text.toString().toInt(),
+                inputPhone?.text.toString()
             )
         )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
 
-                view?.findNavController()?.navigate(R.id.action_creditFragment_to_finalFragment)
+                bundle.putString("FINAL", "${it.id},${it.amount},${it.state}")
+
+                view?.findNavController()
+                    ?.navigate(R.id.action_creditFragment_to_finalFragment, bundle)
 
             }, { t ->
                 onFailure(t)
@@ -71,6 +103,11 @@ class CreditFragment : Fragment() {
     private fun onFailure(t: Throwable) {
         Toast.makeText(context, "Произошла ошибка при вводе данных на кредит", Toast.LENGTH_SHORT)
             .show()
+    }
+
+    private fun allowDispatch() {
+        getCreditButton?.isEnabled =
+            isCorrectFirsNameInput && isCorrectPhoneInput
     }
 
     override fun onDestroy() {

@@ -28,7 +28,7 @@
             android:gravity="center"
             android:layout_marginHorizontal="20dp"
             android:text="@string/welcome"
-            android:textColor="#A7AEC4"
+            android:textColor="@color/light_text"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -40,8 +40,9 @@
             android:layout_marginHorizontal="20dp"
             android:gravity="center"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:text="@string/login_text"
-            android:textColor="#A7AEC4" />
+            android:textColor="@color/light_text"/>
 
         <EditText
             android:id="@+id/textLogin"
@@ -50,6 +51,7 @@
             android:layout_marginTop="32dp"
             android:ems="10"
             android:hint="@string/login"
+            android:textStyle="bold"
             android:inputType="textPersonName"
             android:textColor="#A7AEC4"
             android:textColorHint="#A7AEC4"
@@ -61,8 +63,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/login_password"
+            android:textStyle="bold"
             android:inputType="textPersonName"
-            android:textColor="#A7AEC4"
+            android:textColor="@color/light_text"
             android:textColorHint="#A7AEC4"
             app:backgroundTint="#A7AEC4" />
 
@@ -84,9 +87,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_marginTop="150sp"
+            android:textStyle="bold"
             android:text="@string/registration_info"
             android:textSize="18sp"
-            android:textColor="#A7AEC4" />
+            android:textColor="@color/light_text" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

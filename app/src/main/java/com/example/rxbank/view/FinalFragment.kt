@@ -21,8 +21,10 @@ class FinalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        finalMessage.setOnClickListener {
-            view.findNavController()?.navigate(R.id.action_finalFragment_to_homeFragment)
+        creditInformation.text = arguments?.getString("FINAL")
+
+        backHome.setOnClickListener {
+            view.findNavController().navigate(R.id.action_finalFragment_to_homeFragment)
         }
     }
 }

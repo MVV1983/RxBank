@@ -7,20 +7,70 @@
     android:background="@drawable/rectangle_rounded"
     tools:context=".view.FinalFragment">
 
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_owl_icon"
+        app:layout_constraintBottom_toTopOf="@+id/finalMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/finalMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/final_message"
-        android:textColor="@color/active"
+        android:layout_marginLeft="50sp"
+        android:layout_marginRight="50sp"
         android:gravity="center"
-        android:layout_marginLeft="70sp"
-        android:layout_marginRight="70sp"
-        android:textSize="20sp"
+        android:text="@string/final_message"
+        android:textColor="@color/light_text"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/creditInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="140sp"
+        android:gravity="center"
+        android:text="@string/info_message"
+        android:textColor="@color/light_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/finalMessage" />
+
+    <TextView
+        android:id="@+id/textIdAmountState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/light_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creditInformation" />
+
+    <Button
+        android:id="@+id/backHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70sp"
+        android:layout_marginRight="70sp"
+        android:text="@string/back_to_home"
+        android:textColor="@color/light_button"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIdAmountState" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
