@@ -25,6 +25,13 @@
     <string name="back_text">Back</string>
     <string name="get_credit">Get credit</string>
     <string name="send_data">Send request</string>
+    <string name="first_name_text">First Name: </string>
+    <string name="last_name_text">Last Name: </string>
+    <string name="phone_number_text">Phone number: </string>
+    <string name="period_credit">Credit period: </string>
+    <string name="percent_credit">Percent %: </string>
+    <string name="amount_credit">Amount: </string>
+
 
 
 

@@ -25,6 +25,12 @@
     <string name="back_text">Назад</string>
     <string name="get_credit">Запросить кредит</string>
     <string name="send_data">Отправить запрос</string>
+    <string name="first_name_text">Имя: </string>
+    <string name="last_name_text">Фамилия: </string>
+    <string name="phone_number_text">Номер телефона: </string>
+    <string name="period_credit">Период кредита: </string>
+    <string name="percent_credit">Процентная ставка: </string>
+    <string name="amount_credit">Сумма: </string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
