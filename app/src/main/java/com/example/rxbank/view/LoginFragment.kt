@@ -27,6 +27,7 @@ class LoginFragment : Fragment() {
 
     private var isCorrectNameInput: Boolean = false
     private var isCorrectPasswordInput: Boolean = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,6 +38,8 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        authorizationToken = AuthorizationToken(requireContext())
 
         registrationButton?.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_registrationFragment)
@@ -51,7 +54,7 @@ class LoginFragment : Fragment() {
         }
         textLogin?.doOnTextChanged { text, _, _, _ ->
             if (text?.length!! < 1) {
-                textLogin?.error = "Введите данные"
+                textLogin?.error = "Введите логин"
 
                 isCorrectNameInput = false
             } else {
@@ -62,7 +65,7 @@ class LoginFragment : Fragment() {
         }
         textPass?.doOnTextChanged { text, _, _, _ ->
             if (textPass!!.text.isEmpty()) {
-                textPass?.error = "Введите данные"
+                textPass?.error = "Введите пароль"
 
                 isCorrectPasswordInput = false
             } else {
@@ -83,7 +86,6 @@ class LoginFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .subscribe(
                 { response ->
-                    onResponse(response)
                     authorizationToken.saveAuthorizationToken(response)
                     view?.findNavController()?.navigate(R.id.action_loginFragment_to_homeFragment)
                 },

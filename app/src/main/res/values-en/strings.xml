@@ -17,6 +17,9 @@
     <string name="listing_loans">Listing loans</string>
     <string name="back_button">Exit</string>
     <string name="request_credit">Add credit</string>
+    <string name="input_name">Input login</string>
+    <string name="input_password">Input password</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

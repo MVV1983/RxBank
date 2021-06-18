@@ -17,7 +17,8 @@
     <string name="listing_loans">Список кредитов</string>
     <string name="back_button">Выйти</string>
     <string name="request_credit">Запрос кредита</string>
-
+    <string name="input_name">Введите имя</string>
+    <string name="input_password">Введите пароль</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="MainActivity">Hello blank fragment</string>
