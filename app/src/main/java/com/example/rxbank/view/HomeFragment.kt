@@ -34,7 +34,6 @@ class HomeFragment : Fragment() {
         backBtn?.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_loginFragment)
         )
-
     }
 
     override fun onDestroy() {
