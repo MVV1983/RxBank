@@ -62,5 +62,14 @@
         android:id="@+id/loanInfoFragment"
         android:name="com.example.rxbank.view.LoanInfoFragment"
         android:label="fragment_loan_info"
-        tools:layout="@layout/fragment_loan_info" />
+        tools:layout="@layout/fragment_loan_info" >
+        <action
+            android:id="@+id/action_loanInfoFragment_to_creditFragment"
+            app:destination="@id/creditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditFragment"
+        android:name="com.example.rxbank.view.CreditFragment"
+        android:label="fragment_credit"
+        tools:layout="@layout/fragment_credit" />
 </navigation>

@@ -4,12 +4,10 @@ import com.example.rxbank.data.requests.LoginRequest
 import com.example.rxbank.data.requests.NewLoanRequest
 import com.example.rxbank.data.response.LoanConditions
 import com.example.rxbank.data.response.LoanData
+import com.example.rxbank.data.response.LoansItem
 import com.example.rxbank.data.response.LoginResponse
 import io.reactivex.Single
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface InterfaceAPI {
     @POST("registration")
@@ -23,4 +21,10 @@ interface InterfaceAPI {
 
     @GET("loans/conditions")
     fun getLoanConditions(@Header("Authorization") authorize: String): Single<LoanConditions>
+
+    @GET("loans/all")
+    fun getLoansList(@Header("Authorization") auth: String): Single<List<LoansItem>>
+
+    @GET("loans/{id}")
+    fun getLoanData(@Path("id") id: Int, @Header("Authorization") auth: String): Single<LoanData>
 }

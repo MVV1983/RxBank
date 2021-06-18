@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.rxbank.api.RetrofitService
 import com.example.rxbank.repository.AuthorizationToken
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -38,7 +39,7 @@ class LoanInfoFragment : Fragment() {
         getLoanCondition(key)
 
         submitToReview?.setOnClickListener {
-
+            view.findNavController().navigate(R.id.action_loanInfoFragment_to_creditFragment)
         }
     }
 

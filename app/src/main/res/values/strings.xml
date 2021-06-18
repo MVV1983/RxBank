@@ -24,7 +24,7 @@
     <string name="period_text">Период кредитования: </string>
     <string name="back_text">Назад</string>
     <string name="get_credit">Запросить кредит</string>
-
+    <string name="send_data">Отправить запрос</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
