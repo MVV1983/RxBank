@@ -19,6 +19,11 @@
     <string name="request_credit">Add credit</string>
     <string name="input_name">Input login</string>
     <string name="input_password">Input password</string>
+    <string name="amount_text">Max amount: </string>
+    <string name="percent_text">Interest rate: </string>
+    <string name="period_text">Сredit period: </string>
+    <string name="back_text">Back</string>
+    <string name="to_review">Submit to review</string>
 
 
 

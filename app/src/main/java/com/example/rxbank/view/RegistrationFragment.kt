@@ -77,8 +77,8 @@ class RegistrationFragment : Fragment() {
         val clientR = RetrofitService.create()
         Log.v("test", "$user")
         disposable = clientR.postRequest(user)
-            .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { response -> onResponse(response) },
                 { t -> onFailure(t) }

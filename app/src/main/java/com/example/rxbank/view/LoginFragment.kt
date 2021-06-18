@@ -81,8 +81,8 @@ class LoginFragment : Fragment() {
         val clientR = RetrofitService.create()
         Log.v("test", "$user")
         disposable = clientR.postLogin(user)
-            .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { response ->
                     authorizationToken.saveAuthorizationToken(response)

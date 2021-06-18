@@ -19,6 +19,13 @@
     <string name="request_credit">Запрос кредита</string>
     <string name="input_name">Введите имя</string>
     <string name="input_password">Введите пароль</string>
+    <string name="amount_text">Сумма займа: </string>
+    <string name="percent_text">Процентная ставка: </string>
+    <string name="period_text">Период кредитования: </string>
+    <string name="back_text">Назад</string>
+    <string name="to_review">Отправить на рассмотрение</string>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="MainActivity">Hello blank fragment</string>
